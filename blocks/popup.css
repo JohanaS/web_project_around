@@ -10,6 +10,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
 }
 
 .popup__close-button{
@@ -24,6 +26,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 2;
 }
 .popup__close-button:hover{
   background-image: url("/images/close-icon-hover.png");
@@ -71,6 +74,7 @@
   color: white;
   background-color: black;
   justify-self: center;
+  font-size: 18px;
 }
 .popup__save-button:hover{
   background-color: rgb(40, 38, 38);
