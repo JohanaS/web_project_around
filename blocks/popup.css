@@ -15,6 +15,7 @@
 }
 
 .popup__close-button{
+  background-image: url('../images/close-icon.png');
   width: 28px;
   height: 28px;
   padding: 2px;
@@ -22,11 +23,9 @@
   background-color: transparent;
   border-style: none;
   margin-bottom: 12px;
-  background-image: url('../images/close-icon.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 2;
 }
 .popup__close-button:hover{
   background-image: url('../images/close-icon-hover.png');
