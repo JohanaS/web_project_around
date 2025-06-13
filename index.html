@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Johana M. en TripleTen">
+  <meta name="description" content="Séptimo proyecto incorporando funcionalidades con JS">
+  <meta name="keywords" content="HTML, CSS, JS, bootcamp">
+  <title>Around the U.S.</title>
+  <link rel="stylesheet" href="./pages/index.css"/>
+</head>
+<body>
+  <div class="page page__mask">
+    <header class="header">
+      <img src="./images/Vector.png" class="header__logo" alt="logo-aroundUS"/>
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div>
+          <div class="profile__info">
+            <img src="./images/avatar.png" class="profile__avatar" alt="imagen-usuario"/>
+            <div>
+              <div class="profile__edition">
+                <h2 class="profile__name">Jacques Cousteau</h2>
+                <button class="profile__edit-button"></button>
+              </div>
+              <div class="profile__position">
+                <p>Explorador</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="profile__add-button">+</button>
+      </section>
+      <section class="elements">
+        <div class="elements__item">
+          <img class="elements__item-img" src="./images/caladesi-island.jpeg" alt="caladesi-island"/>
+          <div class="elements__item-info">
+            <p class="elements__item-text">
+              Caladesi Island
+            </p>
+            <button class="elements__item-icon"></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__item-img" src="./images/molokai-1.jpg" alt="molokai"/>
+          <div class="elements__item-info">
+            <p class="elements__item-text">
+              Molokai
+            </p>
+            <button class="elements__item-icon"></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__item-img" src="./images/palm-springs.jpg" alt="palm-springs"/>
+          <div class="elements__item-info">
+            <p class="elements__item-text">
+              Palm Springs
+            </p>
+            <button class="elements__item-icon"></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__item-img" src="./images/scotsdale.jpg" alt="scotsdale"/>
+          <div class="elements__item-info">
+            <p class="elements__item-text">
+              Scotsdale
+            </p>
+            <button class="elements__item-icon"></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__item-img" src="./images/USVirginIslands.jpg" alt="USVirginIslands"/>
+          <div class="elements__item-info">
+            <p class="elements__item-text">
+              US Virgin Islands
+            </p>
+            <button class="elements__item-icon"></button>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__item-img" src="./images/washington-dc.jpg" alt="washington-dc"/>
+          <div class="elements__item-info">
+            <p class="elements__item-text">
+              Washington DC
+            </p>
+            <button class="elements__item-icon"></button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>© 2025.Johana Meza</p>
+    </footer>
+  </div>
+  <section class="popup">
+        <button class="popup__close-button">
+        </button>
+        <form class="popup__container">
+          <h2 class="popup__title">Editar perfil</h2>
+          <input class="popup__input-name" placeholder=" Nombre"></input>
+          <input class="popup__input-about" placeholder=" Acerca de mí"></imput>
+          <button class="popup__save-button" type="submit">Guardar</button>
+        </form>
+      </section>
+  <script src="script.js"></script>
+</body>
+</html>

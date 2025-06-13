@@ -1,0 +1,135 @@
+.profile{
+width: 880px;
+height: 120px;
+margin: 60px auto 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.profile__avatar{
+  border-radius: 100%;
+}
+.profile__info{
+  display: flex;
+  align-items: center;
+}
+.profile__edition{
+  display: flex;
+  align-items: center;
+  row-gap: 20px;
+  max-width: 415px;
+  max-height: 77px;
+}
+.profile__name{
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  letter-spacing: 0%;
+  margin: 0 12px;
+}
+.profile__position{
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 0px 20px;
+}
+.profile__edit-button{
+  background-image: url('../images/edit-button.png');
+  padding: 2px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-style: solid;
+  border-radius: 1px;
+  border-color: white;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.profile__edit-button:hover{
+  background-image: url('../images/edit-button-hover.png');
+  width: 20px;
+  height: 20px;
+  border-color: gray;
+}
+.profile__add-button{
+  justify-content: end;
+  border-style: solid;
+  border-radius: 1px;
+  border-color: white;
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  margin-right: 0;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+.profile__add-button:hover{
+  border-color: gray;
+  color: gray;
+   width: 140px;
+  height: 45px;
+}
+
+
+@media screen and (max-width: 1279px) and (min-width:768px){
+  .profile{
+   display: grid;
+   grid-template-rows: 2;
+   row-gap: 30px;
+   width: 100%;
+   height: auto;
+   justify-content: center;
+  }
+   .profile__add-button{
+    justify-self: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .profile{
+   display: grid;
+   grid-template-rows: 2;
+   row-gap: 30px;
+   width: 100%;
+   margin-top: 40px;
+   height: auto;
+   justify-content: center;
+  }
+  .profile__info{
+    display: grid;
+    grid-template-rows: 2;
+    row-gap: 12px;
+    justify-items: center;
+  }
+  .profile__avatar{
+    justify-self: center;
+
+  }
+  .profile__edition{
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+  }
+  .profile__position{
+    text-align: center;
+    line-height: 100%;
+  }
+  .profile__add-button{
+    justify-self: center;
+    width: 100%;
+  }
+  .profile__name{
+    font-size: 22px;
+    margin:0 12px;
+    width: auto;
+    line-height: 100%;
+  }
+}

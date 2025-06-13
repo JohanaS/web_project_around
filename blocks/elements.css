@@ -1,0 +1,79 @@
+.elements{
+  display: grid;
+  grid-template-columns: repeat(3, 282px);;
+  grid-template-rows: repeat(2, auto);
+  row-gap: 20px;
+  column-gap: 20px;
+  width: 880px;
+  height: 743px;
+  justify-content: center;
+  margin: 60px auto 40px;
+
+
+}
+.elements__item{
+  max-width: 282px;
+  max-height: 361px;
+  background-color: white;
+  border-radius: 12px;
+}
+.elements__item-img{
+  height: 282px;
+  width: 282px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+.elements__item-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8px 0px;
+  box-sizing: border-box;
+}
+.elements__item-text{
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin: 0;
+}
+.elements__item-icon{
+  background-image: url('../images/icon-heart.svg');
+  background-color: transparent;
+  background-size: cover;
+  width: 21px;
+  height: 19px;
+  border-style: hidden;
+  padding-right: 2px;
+}
+.elements__item-icon:hover{
+  background-image: url('../images/icon-heart-hover.svg');
+}
+
+@media screen and (max-width: 1279px) and (min-width: 768px){
+  .elements{
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    width: 100%;
+    height: auto;
+  }
+  .elements__item-info{
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .elements{
+    grid-template-columns: repeat(1,auto);
+    grid-template-rows: repeat(6, auto);
+    width: 100%;
+    height: auto;
+  }
+  .elements__item{
+    width: 100%;
+  }
+   .elements__item-info{
+    padding-bottom: 20px;
+  }
+}
