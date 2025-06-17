@@ -33,3 +33,4 @@ function handleProfileFormSubmit(evt){
 
 let form = popup.querySelector("form");
 form.addEventListener("submit", handleProfileFormSubmit);
+form.addEventListener("submit", closePopup);
