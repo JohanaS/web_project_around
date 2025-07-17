@@ -1,4 +1,4 @@
-.elements{
+.cards-container{
   display: grid;
   grid-template-columns: repeat(3, 282px);;
   grid-template-rows: repeat(2, auto);
@@ -9,28 +9,28 @@
   justify-content: center;
   margin: 60px auto 40px;
 
-
 }
-.elements__item{
+.cards__item{
   max-width: 282px;
   max-height: 361px;
   background-color: white;
   border-radius: 12px;
+  position: relative;
 }
-.elements__item-img{
+.cards__item-img{
   height: 282px;
   width: 282px;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
 }
-.elements__item-info{
+.cards__item-info{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 8px 0px;
   box-sizing: border-box;
 }
-.elements__item-text{
+.cards__item-text{
   font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 900;
@@ -40,43 +40,71 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  padding-bottom: 4px;
 }
-.elements__item-icon{
+.cards__item-like{
   background-image: url('../images/icon-heart.svg');
   background-color: transparent;
+  background-size: cover;
+  width: 21px;
+  height: 19px;
+  margin: 2px;
+  box-sizing:border-box;
+  border-style: hidden;
+}
+.cards__item-like:hover{
+  background-image: url('../images/icon-heart-hover.svg');
+}
+.cards__item-like-selected{
+  background-image: url('../images/icon-heart-selected.svg');
+   background-color: transparent;
   background-size: cover;
   width: 21px;
   height: 19px;
   border-style: hidden;
   padding-right: 2px;
 }
-.elements__item-icon:hover{
-  background-image: url('../images/icon-heart-hover.svg');
+
+.cards__item-delete{
+  background-image: url('../images/icon-trash.svg');
+  background-color: transparent;
+  background-size: cover;
+  width: 19px;
+  height: 22px;
+  border-style: hidden;
+  padding-right: 2px;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 1;
+}
+.cards__item-delete:hover{
+  background-image: url('../images/icon-trash-hover.svg');
 }
 
 @media screen and (max-width: 1279px) and (min-width: 768px){
-  .elements{
+  .cards-container{
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(3, auto);
     width: 100%;
     height: auto;
   }
-  .elements__item-info{
+  .cards__item-info{
     padding-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 767px){
-  .elements{
+  .cards-container{
     grid-template-columns: repeat(1,auto);
     grid-template-rows: repeat(6, auto);
     width: 100%;
     height: auto;
   }
-  .elements__item{
+  .cards__item{
     width: 100%;
   }
-   .elements__item-info{
+   .cards__item-info{
     padding-bottom: 20px;
   }
 }

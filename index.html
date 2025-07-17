@@ -32,75 +32,35 @@
         </div>
         <button class="profile__add-button">+</button>
       </section>
-      <section class="elements">
-        <div class="elements__item">
-          <img class="elements__item-img" src="./images/caladesi-island.jpeg" alt="caladesi-island"/>
-          <div class="elements__item-info">
-            <p class="elements__item-text">
-              Caladesi Island
-            </p>
-            <button class="elements__item-icon"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__item-img" src="./images/molokai-1.jpg" alt="molokai"/>
-          <div class="elements__item-info">
-            <p class="elements__item-text">
-              Molokai
-            </p>
-            <button class="elements__item-icon"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__item-img" src="./images/palm-springs.jpg" alt="palm-springs"/>
-          <div class="elements__item-info">
-            <p class="elements__item-text">
-              Palm Springs
-            </p>
-            <button class="elements__item-icon"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__item-img" src="./images/scotsdale.jpg" alt="scotsdale"/>
-          <div class="elements__item-info">
-            <p class="elements__item-text">
-              Scotsdale
-            </p>
-            <button class="elements__item-icon"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__item-img" src="./images/USVirginIslands.jpg" alt="USVirginIslands"/>
-          <div class="elements__item-info">
-            <p class="elements__item-text">
-              US Virgin Islands
-            </p>
-            <button class="elements__item-icon"></button>
-          </div>
-        </div>
-        <div class="elements__item">
-          <img class="elements__item-img" src="./images/washington-dc.jpg" alt="washington-dc"/>
-          <div class="elements__item-info">
-            <p class="elements__item-text">
-              Washington DC
-            </p>
-            <button class="elements__item-icon"></button>
-          </div>
-        </div>
+      <section class="cards-container">
       </section>
     </main>
     <footer class="footer">
       <p>&#169;2025 Johana Meza</p>
     </footer>
   </div>
-  <section class="popup">
-        <button class="popup__close-button"></button>
-        <form class="popup__container">
+  <section id="popup-edit" class="popup">
+        <button id="profile-close-button" class="popup__close-button"></button>
+        <form id="container-edit"class="popup__container">
           <h2 class="popup__title">Editar perfil</h2>
-          <input class="popup__input-name" placeholder=" Nombre">
-          <input class="popup__input-about" placeholder=" Acerca de mí">
-          <button class="popup__save-button" type="submit">Guardar</button>
+          <input type="text" class="popup__input-name" placeholder=" Nombre">
+          <input type="text" class="popup__input-about" placeholder=" Acerca de mí">
+          <button type="submit" class="popup__save-button" >Guardar</button>
         </form>
+  </section>
+  <section id="popup-add" class="popup">
+        <button id="add-close-button" class="popup__close-button"></button>
+        <form id="container-add" class="popup__container">
+          <h2 class="popup__title">Nuevo lugar</h2>
+          <input type="text" class="popup__input-name" placeholder=" Título">
+          <input type="url" class="popup__input-about" placeholder=" Enlace a la imagen">
+          <button type="submit" class="popup__save-button" >Guardar</button>
+        </form>
+  </section>
+  <section id="popup-image" class="popup__image-container">
+    <button id="image-close-button" class="popup__close-button"></button>
+    <img class="popup__image-item" src="" alt="">
+    <p class="popup__image-title"></p>
   </section>
   <script src="./scripts/index.js"></script>
 </body>

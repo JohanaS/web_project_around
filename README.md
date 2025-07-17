@@ -1,13 +1,19 @@
 # Tripleten web_project_around
 
-Séptimo projecto:
- Javascript básico y uso del DOM
+ Octavo projecto:
+  Lógica y métodos de programación en JavaScript
 
  Descripción de funcionalidad:
-  Blog básico, donde como primer paso puedes editar la información del usuario con los parámetros de nombre y ocupación dando click en un botón que se encuentra justo al lado del nombre precargado.
+  Se trata de un blog con un perfil de usuario precargado, el cual puedes editar para actualizar la información personal. El perfil incluye inicialmente seis imágenes predeterminadas. En esta etapa del proyecto, se añadió la funcionalidad de agregar nuevas imágenes mediante un formulario que solicita el nombre y el URL de la imagen.
+  
+  Las imágenes agregadas se muestran en el perfil, donde el usuario puede:
+   - Dar “me gusta” a las imágenes.
+   - Eliminar aquellas que ya no desea mostrar.
+   - Hacer clic sobre cualquier imagen para verla ampliada en pantalla, junto con su nombre.
+
 
  Descripción técnica:
- Se emplea por primera vez lenguaje de Javascript el cuál brinda la interacción que nos hacia falta, como primer paso, a través de un botón se despliega una ventana que contiene un formulario donde podemos ingresar un valor tanto en el nombre como en la ocupación y reemplazar esa información en los campos del perfil de usuario una vez que se haya presionado el botón de guardar quien es el encargado de actualizar la información a través de una función de JS. Sin olvidar el uso de la propiedad hover en todos los botones empleados para visualizar la interacción con los elementos. 
+  En esta etapa del proyecto se reutilizaron funciones para ser más práctico el código, también se crean elementos, especificar el tipo de elemento y donde se crearían usando métodos pertenecientes al DOM, en esta ocasión se emplearon append() y prepend()
  
  Enlace a gitHub Pages:
   https://johanas.github.io/web_project_around/
