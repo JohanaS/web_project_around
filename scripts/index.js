@@ -83,7 +83,7 @@ function addImage(nameValue, linkValue){
   });
 
   imageElement.addEventListener("click", () => {
-    const image = document.querySelector(".popup__image-item");
+    const image = document.querySelector(".popup__image");
     const nameImage = document.querySelector(".popup__image-title");
     image.src = linkValue;
     nameImage.textContent = nameValue;
@@ -134,4 +134,23 @@ addForm.addEventListener("submit", function (evt){
     link.value = "";
    closePopup(popupAdd);
 });
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    [popupEdit, popupAdd, popupImage].forEach(popup => {
+      if (popup.style.display === "grid") {
+        closePopup(popup);
+      }
+    });
+  }
+});
+
+[popupEdit, popupAdd, popupImage].forEach(popup => {
+  popup.addEventListener("click", function (evt) {
+    if (evt.target === popup) {
+      closePopup(popup);
+    }
+  });
+});
+
 

@@ -1,40 +1,46 @@
 .popup{
   display: none;
-  margin:16px 16px 50px 0;
-  border-radius: 12px;
-  width: 500px;
-  height: auto;
-  grid-template-rows: 4;
   position: fixed;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-}
-.popup__image-container{
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-.popup__image-item{
-  margin: 12px 30px 12px 0px;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
+  z-index: 100;
   justify-content: center;
   align-items: center;
+}
+.popup__set{
+  border: none;
+  background-color: white;
+  border-radius: 12px;
+  max-width: 400px;
+}
+
+.popup__image-container{
+    position: relative;
+    z-index: 1;
+}
+.popup__image{
+  justify-self: center;
   max-height: 75vh;
   max-width: 75vw;
+  margin: 6px auto;
+  padding-top: 4px;
+
+}
+.popup__image-item{
+  margin: auto;
+  padding-top: 16px;
 }
 
 .popup__close-button{
+  position: absolute;
+  top: -8px;
+  right: 2px;
   background-image: url('../images/close-icon.png');
   width: 28px;
   height: 28px;
-  padding: 2px;
-  justify-self: end;
+  justify-content: end;
   background-color: transparent;
   border-style: none;
   margin-bottom: 12px;
@@ -48,10 +54,11 @@
   height: 24px;
 }
 .popup__container{
-  background-color: white;
-  margin: 0 30px;
+  position: relative;
+  background-color: transparent;
+  margin: auto;
   padding:24px 24px 0;
-  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
   max-width: 430px;
   height: auto;
 }
@@ -88,13 +95,31 @@
   background-color: black;
   justify-self: center;
   font-size: 18px;
+  cursor: pointer;
 }
 .popup__save-button:hover{
-  background-color: rgb(40, 38, 38);
+  background-color: rgb(91, 98, 103);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.popup__save-button:disabled{
-   border-color: rgb(199, 190, 190);
-   color:gray;
+.popup__save-button-disabled{
+   border-color: rgb(232, 232, 232);
+   background-color: rgb(175, 184, 198);
+   color:rgb(255, 255, 255);
+}
+.popup__input-error {
+  font-size: 12px;
+  color: red;
+  margin-top: 4px;
+  display: none;
+}
+
+.popup__input_type_error {
+  border-bottom: 1px solid #f00;
+}
+
+.popup__error_active {
+  display: block;
+  color: #f00;
 }
 
 .popup__image-title{
@@ -111,16 +136,4 @@
   color: white;
 }
 
-@media screen and (max-width: 767px){
-  .popup{
-    max-width: 300px;
-    margin: 0;
-  }
-  .popup__container{
-    margin: auto;
-    padding:8px 8px 0;
-    max-width: 280px;
-  }
-
-}
 
