@@ -13,12 +13,12 @@
   border: none;
   background-color: white;
   border-radius: 12px;
-  max-width: 400px;
+  /* max-width: 400px; */
 }
 
 .popup__image-container{
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 .popup__image{
   justify-self: center;
@@ -59,7 +59,7 @@
   margin: auto;
   padding:24px 24px 0;
   font-family: 'Inter', sans-serif;
-  max-width: 430px;
+  width: 36vw;
   height: auto;
 }
 .popup__title{
@@ -136,4 +136,13 @@
   color: white;
 }
 
-
+@media screen and (max-width: 767px){
+  .popup__container{
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 1279px) and (min-width: 768px){
+  .popup__container{
+    width: 50vw;
+  }
+}
