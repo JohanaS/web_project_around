@@ -1,21 +1,16 @@
 # Tripleten web_project_around
 
-Noveno proyecto:
-Manejo de objetos y eventos en JavaScript
+Décimo proyecto:
+Introducción a la programación orientada a objetos
 
 Descripción de la funcionalidad:
 Este proyecto consiste en un blog con un perfil de usuario precargado, el cual puede ser editado para actualizar la información personal. El perfil incluye inicialmente seis imágenes predeterminadas.
-En esta fase, se implementó la validación de formularios, evitando que los cambios se guarden si la información no cumple con el formato requerido.
-También se añadieron eventos para mejorar la experiencia de usuario: ahora es posible cerrar cualquier ventana emergente haciendo clic en el botón de cierre, presionando la tecla Esc o haciendo clic en cualquier área fuera de la ventana activa.
+En esta fase se realiza una refactorización del código aplicando los principios de la Programación Orientada a Objetos (POO). Esto permite lograr una estructura más organizada, reutilizable y fácil de mantener, facilitando la comprensión tanto para el desarrollador como para quienes revisen el proyecto.
 
-Descripción técnica:
-Para esta etapa se creó un nuevo archivo en JavaScript dedicado exclusivamente a la validación de los campos de entrada.
-Se aplicó una metodología que emplea al menos tres funciones clave:
-	•	showInputError: muestra un mensaje de error y resalta el campo inválido.
-	•	hideInputError: oculta el mensaje de error y restaura el estado visual del campo.
-	•	isValid: evalúa si el valor ingresado en el campo cumple con las reglas establecidas.
-
-Además, se implementó el manejo de eventos tanto de teclado como de mouse.
+Para esta etapa se generaron nuevos archivos en JavaScript, empleando clases y objetos para modularizar las funcionalidades principales:
+	•	Card.js: Clase encargada de la creación y gestión de las tarjetas.
+	•	FormValidators.js: Clase responsable de la validación de todas las entradas del formulario.
+	•	Utils.js: Archivo con funciones auxiliares para la manipulación de ventanas emergentes (pop-ups).
  
  Enlace a gitHub Pages:
   https://johanas.github.io/web_project_around/

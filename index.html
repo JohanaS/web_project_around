@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Johana M. en TripleTen">
-  <meta name="description" content="Séptimo proyecto incorporando funcionalidades con JS">
-  <meta name="keywords" content="HTML, CSS, JS, bootcamp">
+  <meta name="description" content="Décimo proyecto: refactorización">
+  <meta name="keywords" content="HTML, CSS, JS, bootcamp, POO">
   <title>Around the U.S.</title>
   <link rel="stylesheet" href="./pages/index.css"/>
 </head>
@@ -33,6 +33,16 @@
         <button class="profile__add-button">+</button>
       </section>
       <section class="cards-container">
+        <template id="template">
+          <article class="cards__item">
+            <img class="cards__item-img" src=""/>
+            <button type="button" class="cards__item-delete"></button>
+            <div class="cards__item-info">
+              <p class="cards__item-text"></p>
+              <button type="button" class="cards__item-like"></button>
+            </div>
+          </article>
+        </template>
       </section>
     </main>
     <footer class="footer">
@@ -84,7 +94,7 @@
       </div>
     </div>
   </section>
-  <script src="./scripts/index.js"></script>
-  <script src="./scripts/validate.js"></script>
+  <script type="module" src="./scripts/index.js"></script>
+  <!-- <script type="module" src="./scripts/validate.js"></script> -->
 </body>
 </html>

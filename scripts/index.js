@@ -1,96 +1,7 @@
+import { Card } from "./card.js";
+import { FormValidator } from "./formValidator.js";
+import { openPopup, openPopupImage, closePopup } from "./utils.js";
 
-const page = document.querySelector(".page");
-const content = page.querySelector(".content");
-const profile = content.querySelector(".profile");
-
-let popupEdit = document.getElementById("popup-edit");
-let popupAdd = document.getElementById("popup-add");
-let popupImage = document.getElementById("popup-image");
-
-let profileEditButton = profile.querySelector(".profile__edit-button");
-let closeEditButton = document.getElementById("profile-close-button");
-
-let addImageButton = profile.querySelector(".profile__add-button");
-let closeAddButton = document.getElementById("add-close-button");
-let closeImageButton = document.getElementById("image-close-button");
-
-function openPopup(popupElement){
-  page.style.opacity = "0.3";
-  popupElement.style.display = "grid";
-}
-function openPopupImage(popupElement){
-  page.style.opacity = "0.1";
-  popupElement.style.display = "grid";
-}
-function closePopup(popupElement){
-    page.style.opacity = "1";
-    popupElement.style.display ="none";
-}
-
-profileEditButton.addEventListener("click", () => openPopup(popupEdit));
-closeEditButton.addEventListener("click", () => closePopup(popupEdit));
-
-addImageButton.addEventListener("click", () => openPopup(popupAdd));
-closeAddButton.addEventListener("click", () => closePopup(popupAdd));
-closeImageButton.addEventListener("click", () => closePopup(popupImage));
-
-function handleProfileFormSubmit(evt){
-  evt.preventDefault();
-  let nameInput = popupEdit.querySelector(".popup__input-name");
-  let jobInput = popupEdit.querySelector(".popup__input-about");
-
-  let name = profile.querySelector(".profile__name");
-  let job = profile.querySelector(".profile__position");
-  name.textContent = nameInput.value;
-  job.textContent = jobInput.value;
-
-  nameInput.value = "";
-  jobInput.value = "";
-}
-
-let editForm = document.getElementById("container-edit");
-editForm.addEventListener("submit", handleProfileFormSubmit);
-editForm.addEventListener("submit", () => closePopup(popupEdit));
-
-function addImage(nameValue, linkValue){
-  const imagesContainer = content.querySelector(".cards-container");
-
-  const imageItem = document.createElement("div");
-    imageItem.classList.add("cards__item");
-  const imageElement = document.createElement("img");
-    imageElement.classList.add("cards__item-img");
-    imageElement.src = linkValue;
-    imageElement.alt = nameValue;
-  const deleteButtonElement = document.createElement("button");
-    deleteButtonElement.classList.add("cards__item-delete");
-  const nameContainer =document.createElement("div");
-    nameContainer.classList.add("cards__item-info");
-  const nameElement = document.createElement("p");
-    nameElement.classList.add("cards__item-text");
-    nameElement.textContent = nameValue;
-  const likeButtonElement = document.createElement("button");
-    likeButtonElement.classList.add("cards__item-like");
-
-  nameContainer.append(nameElement,likeButtonElement);
-  imageItem.append(deleteButtonElement,imageElement,nameContainer);
-  imagesContainer.prepend(imageItem);
-
-  likeButtonElement.addEventListener("click", () => {
-    likeButtonElement.classList.toggle("cards__item-like-selected");
-  });
-  deleteButtonElement.addEventListener("click", () => {
-    imageItem.remove();
-  });
-
-  imageElement.addEventListener("click", () => {
-    const image = document.querySelector(".popup__image");
-    const nameImage = document.querySelector(".popup__image-title");
-    image.src = linkValue;
-    nameImage.textContent = nameValue;
-    openPopupImage(popupImage);
-  });
-
-}
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -117,40 +28,107 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
   }
 ];
-document.addEventListener("DOMContentLoaded", () => {
-  initialCards.forEach(card => {
-    addImage(card.name, card.link);
-  });
-});
 
-let addForm = document.getElementById("container-add");
-addForm.addEventListener("submit", function (evt){
+const formConfig = {
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__submit",
+  inactiveButtonClass: "popup__save-button-disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error-active",
+};
+
+const profileName = document.querySelector(".profile__name");
+const profilePosition = document.querySelector(".profile__position");
+const profileEditButton = document.querySelector(".profile__edit-button");
+const addImageButton = document.querySelector(".profile__add-button");
+
+const popupEdit = document.getElementById("popup-edit");
+const closeEditButton = popupEdit.querySelector(".popup__close-button");
+const formEdit = popupEdit.querySelector(".popup__container");
+const nameInput = popupEdit.querySelector("#name-input");
+const aboutInput = popupEdit.querySelector("#about-input");
+
+const popupAdd = document.getElementById("popup-add");
+const closeAddButton = popupAdd.querySelector(".popup__close-button");
+const formAdd = popupAdd.querySelector(".popup__container");
+const titleInput = popupAdd.querySelector("#title-input");
+const urlInput = popupAdd.querySelector("#url-input");
+
+const popupImage = document.getElementById("popup-image");
+const closeImageButton = popupImage.querySelector(".popup__close-button");
+
+const cardsContainer = document.querySelector(".cards-container");
+
+const editFormValidator = new FormValidator(formConfig, formEdit);
+const addFormValidator = new FormValidator(formConfig, formAdd);
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
+
+function createCard(data){
+  const card = new Card(data, "#template", openPopupImage);
+  return card.generateCard();
+}
+
+function renderCard(data){
+  const cardElement = createCard(data);
+  cardsContainer.prepend(cardElement);
+}
+initialCards.forEach(renderCard);
+
+function openProfilePopup(){
+  nameInput.value = profileName.textContent;
+  aboutInput.value = profilePosition.textContent;
+  editFormValidator.resetValidation();
+  openPopup(popupEdit);
+}
+
+function handleProfileFormSubmit(evt){
   evt.preventDefault();
-  const title= popupAdd.querySelector(".popup__input-name");
-  const link = popupAdd.querySelector(".popup__input-about");
+  profileName.textContent = nameInput.value;
+  profilePosition.textContent = aboutInput.value;
+  closePopup(popupEdit);
+}
 
-  addImage(title.value, link.value);
-    title.value = "";
-    link.value = "";
-   closePopup(popupAdd);
+function handleAddCardFormSubmit(evt){
+  evt.preventDefault();
+    const newCardData = {
+      name: titleInput.value,
+      link: urlInput.value,
+    };
+    renderCard(newCardData);
+    formAdd.reset();
+    addFormValidator.resetValidation();
+    closePopup(popupAdd);
+}
+
+profileEditButton.addEventListener("click", openProfilePopup);
+closeEditButton.addEventListener("click", () => closePopup(popupEdit));
+
+addImageButton.addEventListener("click", () => {
+  addFormValidator.resetValidation();
+  openPopup(popupAdd);
 });
 
-document.addEventListener("keydown", function (evt) {
-  if (evt.key === "Escape") {
-    [popupEdit, popupAdd, popupImage].forEach(popup => {
-      if (popup.style.display === "grid") {
-        closePopup(popup);
-      }
-    });
+closeAddButton.addEventListener("click", () => closePopup(popupAdd));
+closeImageButton.addEventListener("click", () => closePopup(popupImage));
+
+formEdit.addEventListener("submit", handleProfileFormSubmit);
+formAdd.addEventListener("submit", handleAddCardFormSubmit);
+
+document.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("popup")) {
+    closePopup(evt.target);
   }
 });
 
-[popupEdit, popupAdd, popupImage].forEach(popup => {
-  popup.addEventListener("click", function (evt) {
-    if (evt.target === popup) {
-      closePopup(popup);
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    const activePopup = document.querySelector(".popup_is-opened");
+    if (activePopup) {
+      closePopup(activePopup);
     }
-  });
+  }
 });
+
 
 
