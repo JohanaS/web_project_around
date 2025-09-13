@@ -14,7 +14,6 @@
   background-color: white;
   border-radius: 12px;
 }
-
 .popup__image-container{
   position: relative;
   z-index: 1;
@@ -31,7 +30,6 @@
   margin: auto;
   padding-top: 16px;
 }
-
 .popup__close-button{
   position: absolute;
   top: -8px;
@@ -113,8 +111,6 @@
 .popup__input_type_error {
   border-bottom: 1px solid #f00;
 }
-
-
 .popup__image-title{
   font-family: 'Inter', sans-serif;
   font-size: 24px;
@@ -128,7 +124,6 @@
   padding-bottom: 4px;
   color: white;
 }
-
 .popup_is-opened {
   visibility: visible;
   opacity: 1;
