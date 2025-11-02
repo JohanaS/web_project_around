@@ -6,9 +6,38 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 }
+.profile__avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
 .profile__avatar{
   border-radius: 100%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 }
+.profile__avatar-container:hover .profile__avatar {
+  opacity: 0.3;
+}
+.profile__edit-icon{
+  background-image: url('../images/edit-image.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+.profile__avatar-container:hover .profile__edit-icon,
+.profile__edit-icon:hover {
+  opacity: 1;
+}
+
+
 .profile__info{
   display: flex;
   align-items: center;

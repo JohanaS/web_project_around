@@ -1,29 +1,29 @@
-# Tripleten web_project_around
+Web Project Around – TripleTen (Edición con API)
 
-Onceavo proyecto:
-POO avanzado y NPM
+Este proyecto forma parte del programa de desarrollo web de TripleTen y corresponde al sprint enfocado en JavaScript asíncrono e integración con API.
 
-Descripción de la funcionalidad:
-Este proyecto consiste en un blog con un perfil de usuario precargado, el cual puede ser editado para actualizar la información personal. El perfil incluye inicialmente seis imágenes predeterminadas.
-En esta etapa se realizó una refactorización completa del código aplicando Programación Orientada a Objetos (POO). Esto permitió lograr una estructura más organizada, modular y reutilizable, facilitando el mantenimiento y la comprensión tanto para el desarrollador como para revisores del proyecto.
+El resultado es una aplicación web interactiva tipo blog donde los usuarios pueden:
 
-Clases y módulos principales
+✅ Editar la información de su perfil
+✅ Actualizar su avatar
+✅ Ver tarjetas traídas desde el servidor
+✅ Agregar nuevas tarjetas
+✅ Dar “like” y removerlo
+✅ Eliminar tarjetas propias mediante confirmación
+✅ Visualizar imágenes en una ventana emergente
 
-Se generaron nuevos archivos JavaScript que encapsulan funcionalidades específicas mediante clases:
-	•	Card.js
-Clase encargada de la creación, visualización y gestión de las tarjetas de imagen, incluyendo interacciones como “like”, eliminación y apertura de la imagen en un popup.
-	•	Section.js
-Clase responsable de gestionar y renderizar un conjunto de elementos en un contenedor de la página. Permite agregar elementos nuevos de forma dinámica al inicio o al final del contenedor.
-	•	Popup.js
-Clase base para manejar ventanas emergentes (pop-ups), con métodos para abrir, cerrar y cerrar con la tecla Esc.
-	•	PopupWithForm.js
-Clase hija de Popup que maneja formularios dentro del popup. Incluye métodos para recopilar los datos de los inputs, enviar el formulario y resetearlo al cerrar.
-	•	PopupWithImage.js
-Clase hija de Popup que abre una ventana emergente mostrando una imagen y su leyenda correspondiente.
-	•	UserInfo.js
-Clase encargada de almacenar, mostrar y actualizar la información del usuario en la página, permitiendo interactuar con los formularios de edición sin manipular directamente el DOM.
-	•	FormValidator.js
-Clase para validar todos los formularios de manera dinámica, activando o desactivando el botón de envío y mostrando errores en los campos correspondientes.
+Todo con actualizaciones en tiempo real mediante llamadas a la API ✨
+
+⸻
+
+🚀 Tecnologías Utilizadas
+	•	HTML5
+	•	CSS3 (BEM)
+	•	JavaScript 
+	•	Programación orientada a objetos
+	•	Manejo de promesas y fetch
+	•	Validación de formularios
+	•	API (métodos GET, POST, PATCH, DELETE)
 
  
  Enlace a gitHub Pages:

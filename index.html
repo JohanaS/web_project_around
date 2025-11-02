@@ -18,14 +18,17 @@
       <section class="profile">
         <div>
           <div class="profile__info">
-            <img src="./src/images/avatar.png" class="profile__avatar" alt="imagen-usuario"/>
+            <div class="profile__avatar-container">
+              <img name="avatar" src="" class="profile__avatar" alt="imagen-usuario"/>
+              <span name="editImage" class="profile__edit-icon"></span>
+            </div>
             <div>
               <div class="profile__edition">
-                <h2 class="profile__name">Jacques Cousteau</h2>
+                <h2 class="profile__name"></h2>
                 <button class="profile__edit-button"></button>
               </div>
               <div>
-                <p class="profile__position">Explorador</p>
+                <p class="profile__position"></p>
               </div>
             </div>
           </div>
@@ -36,10 +39,10 @@
         <template id="template">
           <article class="cards__item">
             <img class="cards__item-img" src=""/>
-            <button type="button" class="cards__item-delete"></button>
+            <button name="delete" type="button" class="cards__item-delete"></button>
             <div class="cards__item-info">
               <p class="cards__item-text"></p>
-              <button type="button" class="cards__item-like"></button>
+              <button name="like" type="button" class="cards__item-like"></button>
             </div>
           </article>
         </template>
@@ -55,11 +58,11 @@
       <fieldset class="popup__set">
         <h2 class="popup__title">Editar perfil</h2>
         <label class="popup__field">
-          <input type="text" id="name-input" class="popup__input popup__input-name" placeholder=" Nombre" minlength="2" maxlength="40" required>
+          <input name="name" type="text" id="name-input" class="popup__input popup__input-name" placeholder=" Nombre" minlength="2" maxlength="40" required>
           <span class="popup__input-error name-input-error"></span>
         </label>
         <label class="popup__field">
-          <input type="text" id="about-input" class="popup__input popup__input-about" placeholder=" Acerca de mí" minlength="2" maxlength="200" required>
+          <input name="about" type="text" id="about-input" class="popup__input popup__input-about" placeholder=" Acerca de mí" minlength="2" maxlength="200" required>
           <span class="popup__input-error about-input-error"></span>
         </label>
         <button type="submit" class="popup__submit popup__save-button">
@@ -74,11 +77,11 @@
       <fieldset class="popup__set">
         <h2 class="popup__title">Nuevo lugar</h2>
         <label class="popup__field">
-          <input type="text" id="title-input" class="popup__input popup__input-name" placeholder=" Título" minlength="2" maxlength="30" required>
+          <input name="title" type="text" id="title-input" class="popup__input popup__input-name" placeholder=" Título" minlength="2" maxlength="30" required>
           <span class="popup__input-error title-input-error"></span>
         </label>
         <label class="popup__field">
-          <input type="url" id="url-input" class="popup__input popup__input-about" placeholder=" Enlace a la imagen" required>
+          <input name="link" type="url" id="url-input" class="popup__input popup__input-about" placeholder=" Enlace a la imagen" required>
           <span class="popup__input-error url-input-error"></span>
         </label>
         <button type="submit" class="popup__submit popup__save-button">Guardar</button>
@@ -93,6 +96,28 @@
         <p class="popup__image-title"></p>
       </div>
     </div>
+  </section>
+  <section id="popup-delete" class="popup">
+    <form id="container-delete" class="popup__container" novalidate>
+      <button id="add-close-button" class="popup__close-button" type="button"></button>
+      <fieldset class="popup__set">
+        <h2 class="popup__title">¿Estás seguro/a?</h2>
+        <button type="submit" class="popup__submit popup__save-button">Si</button>
+      </fieldset>
+    </form>
+  </section>
+  <section id="popup-avatar" class="popup">
+    <form id="container-avatar" class="popup__container" novalidate>
+      <button class="popup__close-button" type="button"></button>
+      <fieldset class="popup__set">
+        <h2 class="popup__title">Cambiar foto de perfil</h2>
+        <label class="popup__field">
+          <input name="avatar" type="url" id="avatar-input" class="popup__input popup__input-about" placeholder=" Enlace a la imagen" required>
+          <span class="popup__input-error avatar-input-error" id="avatar-input-error"></span>
+        </label>
+        <button type="submit" class="popup__submit popup__save-button">Guardar</button>
+      </fieldset>
+    </form>
   </section>
   <script type="module" src="./src/pages/index.js"></script>
 </body>
