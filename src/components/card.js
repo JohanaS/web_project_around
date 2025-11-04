@@ -16,9 +16,7 @@ export class Card {
     .cloneNode(true);
     return cardElement;
   }
-  // _removeCard(){
-  //   this._element.remove();
-  // }
+
   _likeCard(){
     this._likeButton.classList.toggle("cards__item-like-selected")
   }
@@ -28,9 +26,6 @@ export class Card {
       this._likeCard();
     });
 
-    // this._trashButton.addEventListener("click", () => {
-    //   this._removeCard();
-    // });
 
     this._cardImage.addEventListener("click", () => {
       this._handleImageClick({
@@ -49,7 +44,6 @@ export class Card {
     this._cardTitle.textContent = this._title;
     this._cardImage.src = this._image;
     this._cardImage.alt = this._title;
-    console.log(this._id);
     this._setEventListeners();
     return this._element;
   }

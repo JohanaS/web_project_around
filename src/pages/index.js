@@ -36,8 +36,6 @@ import { api } from "../components/api.js";
 // ];
 
 api.getInitialCards().then(function(initialCards) {
-  console.log(initialCards);
-
   const formConfig = {
     inputSelector: ".popup__input",
     submitButtonSelector: ".popup__submit",
@@ -54,7 +52,6 @@ api.getInitialCards().then(function(initialCards) {
 
   api.getUserInfo()
   .then(function(initialInfo){
-    console.log(initialInfo);
     userInfo.setUserInfo({
       name: initialInfo.name,
       about: initialInfo.about,
@@ -144,7 +141,6 @@ api.getInitialCards().then(function(initialCards) {
 
     deleteBtn.addEventListener("click", () => {
       popupConfirmDelete.open();
-
       popupConfirmDelete.setConfirmAction(() => {
         const confirmBtn = document.querySelector("#popup-delete .popup__submit");
         const originalText = confirmBtn ? confirmBtn.textContent : null;
